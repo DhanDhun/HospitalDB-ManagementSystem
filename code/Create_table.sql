@@ -110,6 +110,7 @@ CREATE TABLE nurse_assigment (
 -- NURSE
 CREATE TABLE nurse (
     staff_id        INT PRIMARY KEY,
-    spealization    VARCHAR(50),
+    specialization    VARCHAR(50),
     FOREIGN KEY (staff_id) REFERENCES staff(staff_id)
 );
+
