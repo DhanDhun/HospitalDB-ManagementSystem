@@ -119,17 +119,18 @@ insert into inpatient_care values
 (302, 10004, 'R104', '2025-12-02', '2025-12-06');  
 
 -- NURSE ASSIGNMENT
-insert into nurse_assignment values
+insert into nurse_assigment values
 (1, 7001, 301, 'Pagi'),
 (2, 7002, 301, 'Siang'),
 (3, 7007, 302, 'Pagi'),
 (4, 7008, 302, 'Malam');
 
 -- NURSE
-insert into nurse (staff_id, spealization) values
+insert into nurse (staff_id, specalization) values
 (7001, 'Perawat Umum'),       
 (7002, 'Perawat Umum'),       
 (7007, 'Perawat Umum'),       
 (7008, 'Perawat Umum'),       
 (7006, 'Perawat Umum');       
+
 
