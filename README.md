@@ -23,7 +23,7 @@
     <td>Reza Nur Latifah</td>
   </tr>
 </table>
-<hr>
+
 <h2>Deskripsi Proyek</h2>
 
 <div align="justify">
