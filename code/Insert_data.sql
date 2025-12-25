@@ -126,11 +126,12 @@ insert into nurse_assigment values
 (4, 7008, 302, 'Malam');
 
 -- NURSE
-insert into nurse (staff_id, specalization) values
+insert into nurse (staff_id, specialization) values
 (7001, 'Perawat Umum'),       
 (7002, 'Perawat Umum'),       
 (7007, 'Perawat Umum'),       
 (7008, 'Perawat Umum'),       
 (7006, 'Perawat Umum');       
+
 
 
