@@ -1,5 +1,5 @@
 -- PATIENT
-insert into patient values
+insert into patient (patient_id, first_name, last_name, contact_person) values
 (10001, 'Dani', 'Saputra', '08881188117'),
 (10002, 'Amelia', 'Nasir', '08199011164'),
 (10003, 'Rayn', 'Wardana', '08134443454'),
@@ -12,7 +12,7 @@ insert into patient values
 (10010, 'Kusuma', 'Putra', '088813447999');
 
 -- DEPARTMENT
-insert into department values
+insert into department (dept_id, dept_name, building) values
 (201,'Penyakit Dalam','Gedung A'),
 (202, 'Anak', 'Gedung B'),
 (203, 'Bedah', 'Gedung C'),
@@ -23,7 +23,7 @@ insert into department values
 (208, 'Mata', 'Gedung D');
 
 -- MEDICINE
-insert into medicine  values
+insert into medicine (medicine_code, name, price, stock) values
 (001, 'Paracetamol', 5000.00, 100),
 (002, 'Amoxicillin', 10000.00, 50),
 (003, 'Ibuprofen', 7000.00, 80),
@@ -36,7 +36,7 @@ insert into medicine  values
 (010, 'Amoxicillin Syrup', 28000.00, 50);
 
 -- STAFF
-insert into staff values
+insert into staff (staff_id, first_name, last_name, role, contact_person) values
 (7001, 'Rina', 'Putri', 'Perawat', '081144411411'),
 (7002, 'Budi', 'Santoso', 'Perawat', '08222552252'),
 (7003, 'Andi', 'Wijaya', 'Security', '081334334443'),
@@ -49,7 +49,7 @@ insert into staff values
 (7010, 'Nina', 'Sari', 'Apoteker', '081123456789');
 
 -- ROOM
-insert into room values
+insert into room (room_code, room_number, capacity) values
 ('R101', 'Ruang 101', 2),
 ('R102', 'Ruang 102', 1),
 ('R103', 'Ruang 103', 2),
@@ -62,30 +62,48 @@ insert into room values
 ('R204', 'Ruang 204', 2);
 
 -- DOCTOR
-insert into doctor values
-(9001, 'Aldo', 'Pranata', 'Senin-Rabu 08:00-16:00', '081334334443', 201),
-(9002, 'Nadia', 'Arumi', 'Selasa-Kamis 08:00-16:00', '081447747444', 202),
-(9003, 'Rafael', 'Santoso', 'Senin-Jumat 09:00-17:00', '08166647666', 203),
-(9004, 'Kirana', 'Tashmia', 'Rabu-Jumat 08:00-16:00', '081934459999', 204),
-(9005, 'Elara', 'Salsabila', 'Senin-Jumat 08:00-15:00', '081122233344', 205),
-(9006, 'Gian', 'Hutama', 'Selasa-Kamis 09:00-17:00', '081133344455', 206),
-(9007, 'Mira', 'Kalista', 'Senin-Rabu 10:00-18:00', '081144455566', 207),
-(9008, 'Azka', 'Wijaya', 'Senin-Jumat 08:00-16:00', '081155566677', 208),
-(9009, 'Dara', 'Putri', 'Rabu-Jumat 08:00-16:00', '081166677788', 204),
-(9010, 'Faris', 'Darmaja', 'Selasa-Kamis 08:00-16:00', '081177788899', 205);
+insert into doctor (doctor_id, first_name, last_name, contact_person, dept_id) values
+(9001, 'Aldo', 'Pranata', '081334334443', 201),
+(9002, 'Nadia', 'Arumi', '081447747444', 202),
+(9003, 'Rafael', 'Santoso', '08166647666', 203),
+(9004, 'Kirana', 'Tashmia', '081934459999', 204),
+(9005, 'Elara', 'Salsabila', '081122233344', 205),
+(9006, 'Gian', 'Hutama', '081133344455', 206),
+(9007, 'Mira', 'Kalista', '081144455566', 207),
+(9008, 'Azka', 'Wijaya', '081155566677', 208),
+(9009, 'Dara', 'Putri', '081166677788', 204),
+(9010, 'Faris', 'Darmaja', '081177788899', 205);
+
+-- DOCTOR SCHEDULE
+insert into doc_schedule (schedule_id, doctor_id, day_of_week, start_time, end_time) values
+(1, 9001, 1, '08:00', '16:00'),
+(2, 9001, 3, '08:00', '16:00'),
+(3, 9002, 2, '08:00', '16:00'),
+(4, 9002, 4, '08:00', '16:00'),
+(5, 9003, 2, '09:00', '17:00'),
+(6, 9003, 5, '09:00', '17:00'),
+(7, 9004, 1, '08:00', '16:00'),
+(8, 9004, 3, '08:00', '14:00'),
+(9, 9005, 4, '13:00', '20:00'),
+(10, 9006, 5, '09:00', '15:00'),
+(11, 9007, 5, '10:00', '18:00'),
+(12, 9008, 6, '08:00', '12:00'),
+(13, 9009, 2, '07:00', '14:00'),
+(14, 9009, 4, '07:00', '14:00'),
+(15, 9010, 6, '14:00', '21:00');
 
 -- APPOINTMENT
-insert into appointment values
-(501, 10001, 9001, 201, '08:30', '2025-12-01'),
-(502, 10002, 9002, 202, '09:00', '2025-12-01'),
-(503, 10003, 9003, 203, '10:00', '2025-12-02'),
-(504, 10004, 9004, 204, '11:00', '2025-12-02'),
-(505, 10005, 9005, 205, '13:00', '2025-12-03'),
-(506, 10006, 9006, 206, '14:00', '2025-12-03'),
-(507, 10007, 9007, 207, '10:00', '2025-12-04'),
-(508, 10008, 9008, 208, '09:30', '2025-12-04'),
-(509, 10009, 9009, 204, '13:30', '2025-12-05'),
-(510, 10010, 9010, 205, '15:30', '2025-12-05');
+insert into appointment (appointment_code, patient_id, dept_id, doctor_id, appointment_date, appointment_time) values
+(501, 10001, 201, 9001, '2025-12-01', '08:30'),
+(502, 10002, 202, 9002, '2025-12-02', '09:30'),
+(503, 10003, 203, 9003, '2025-12-02', '12:20'),
+(504, 10004, 204, 9004, '2025-12-03', '10:30'),
+(505, 10005, 205, 9005, '2025-12-04', '15:30'),
+(506, 10006, 206, 9006, '2025-12-05', '10:00'),
+(507, 10007, 207, 9007, '2025-12-05', '15:00'),
+(508, 10008, 208, 9008, '2025-12-06', '09:30'),
+(509, 10009, 204, 9009, '2025-12-09', '11:15'),
+(510, 10010, 205, 9010, '2025-12-13', '19:30');
 
 -- MEDICAL RECORD
 insert into medical_record values
@@ -132,6 +150,7 @@ insert into nurse (staff_id, specialization) values
 (7007, 'Perawat Umum'),       
 (7008, 'Perawat Umum'),       
 (7006, 'Perawat Umum');       
+
 
 
 
