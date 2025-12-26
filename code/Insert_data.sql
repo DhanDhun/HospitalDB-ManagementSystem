@@ -1,5 +1,5 @@
 -- PATIENT
-insert into patient values
+insert into patient (patient_id, first_name, last_name, contact_person) values
 (10001, 'Dani', 'Saputra', '08881188117'),
 (10002, 'Amelia', 'Nasir', '08199011164'),
 (10003, 'Rayn', 'Wardana', '08134443454'),
@@ -12,7 +12,7 @@ insert into patient values
 (10010, 'Kusuma', 'Putra', '088813447999');
 
 -- DEPARTMENT
-insert into department values
+insert into department (dept_id, dept_name, building) values
 (201,'Penyakit Dalam','Gedung A'),
 (202, 'Anak', 'Gedung B'),
 (203, 'Bedah', 'Gedung C'),
@@ -23,7 +23,7 @@ insert into department values
 (208, 'Mata', 'Gedung D');
 
 -- MEDICINE
-insert into medicine  values
+insert into medicine (medicine_code, name, price, stock) values
 (1, 'Paracetamol', 5000.00, 100),
 (2, 'Amoxicillin', 10000.00, 50),
 (3, 'Ibuprofen', 7000.00, 80),
@@ -35,8 +35,9 @@ insert into medicine  values
 (9, 'Obat Tetes Mata', 20000.00, 70),
 (10, 'Amoxicillin Syrup', 28000.00, 50);
 
+
 -- STAFF
-insert into staff values
+insert into staff (staff_id, first_name, last_name, role, contact_person) values
 (7001, 'Rina', 'Putri', 'Perawat', '081144411411'),
 (7002, 'Budi', 'Santoso', 'Perawat', '08222552252'),
 (7003, 'Andi', 'Wijaya', 'Security', '081334334443'),
@@ -49,7 +50,7 @@ insert into staff values
 (7010, 'Nina', 'Sari', 'Apoteker', '081123456789');
 
 -- ROOM
-insert into room values
+insert into room (room_code, room_number, capacity) values
 ('R101', 'Ruang 101', 2),
 ('R102', 'Ruang 102', 1),
 ('R103', 'Ruang 103', 2),
@@ -62,7 +63,8 @@ insert into room values
 ('R204', 'Ruang 204', 2);
 
 -- DOCTOR
-insert into doctor values
+
+insert into doctor (doctor_id, first_name, last_name, contact_person, dept_id) values
 (9001, 'Aldo', 'Pranata', '081334334443', 201),
 (9002, 'Nadia', 'Arumi', '081447747444', 202),
 (9003, 'Rafael', 'Santoso', '08166647666', 203),
@@ -70,36 +72,43 @@ insert into doctor values
 (9005, 'Elara', 'Salsabila', '081122233344', 205),
 (9006, 'Gian', 'Hutama', '081133344455', 206),
 (9007, 'Mira', 'Kalista', '081144455566', 207),
-(9008, 'Azka', 'Wijaya',  '081155566677', 208),
+(9008, 'Azka', 'Wijaya', '081155566677', 208),
 (9009, 'Dara', 'Putri', '081166677788', 204),
 (9010, 'Faris', 'Darmaja', '081177788899', 205);
 
 -- DOCTOR SCHEDULE
-insert into doc_schedule (doctor_id, day_of_week, start_time, end_time) VALUES
+insert into doc_schedule (doctor_id, day_of_week, start_time, end_time) values
 (9001, 1, '08:00', '16:00'),
 (9001, 3, '08:00', '16:00'),
 (9002, 2, '08:00', '16:00'),
 (9002, 4, '08:00', '16:00'),
-(9003, 1, '09:00', '17:00'),
+(9003, 2, '09:00', '17:00'),
 (9003, 5, '09:00', '17:00'),
-(9004, 3, '08:00', '16:00'),
-(9004, 5, '08:00', '16:00');
+(9004, 1, '08:00', '16:00'),
+(9004, 3, '08:00', '14:00'),
+(9005, 4, '13:00', '20:00'),
+(9006, 5, '09:00', '15:00'),
+(9007, 5, '10:00', '18:00'),
+(9008, 6, '08:00', '12:00'),
+(9009, 2, '07:00', '14:00'),
+(9009, 4, '07:00', '14:00'),
+(9010, 6, '14:00', '21:00');
 
 -- APPOINTMENT
-insert into appointment values
+insert into appointment (appointment_code, patient_id, dept_id, doctor_id, appointment_date, appointment_time) values
 (501, 10001, 201, 9001, '2025-12-01', '08:30'),
-(502, 10002, 202, 9002, '2025-12-01', '09:00'),
-(503, 10003, 203, 9003, '2025-12-02', '10:00'),
-(504, 10004, 204, 9004, '2025-12-02', '11:00'),
-(505, 10005, 205, 9005, '2025-12-03', '13:00'),
-(506, 10006, 206, 9006, '2025-12-03', '14:00'),
-(507, 10007, 207, 9007, '2025-12-04', '10:00'),
-(508, 10008, 208, 9008, '2025-12-04', '09:30'),
-(509, 10009, 204, 9009, '2025-12-05', '13:30'),
-(510, 10010, 205, 9010, '2025-12-05', '15:30');
+(502, 10002, 202, 9002, '2025-12-02', '09:30'),
+(503, 10003, 203, 9003, '2025-12-02', '12:20'),
+(504, 10004, 204, 9004, '2025-12-03', '10:30'),
+(505, 10005, 205, 9005, '2025-12-04', '15:30'),
+(506, 10006, 206, 9006, '2025-12-05', '10:00'),
+(507, 10007, 207, 9007, '2025-12-05', '15:00'),
+(508, 10008, 208, 9008, '2025-12-06', '09:30'),
+(509, 10009, 204, 9009, '2025-12-09', '11:15'),
+(510, 10010, 205, 9010, '2025-12-13', '19:30');
 
 -- MEDICAL RECORD
-insert into medical_record values
+insert into medical_record (medical_record_code, patient_id, doctor_id, appointment_code, diagnosis, treatment) values
 (20001, 10001, 9001, 501, 'Demam tinggi', 'Istirahat dan konsumsi makanan bergizi'),
 (20002, 10002, 9002, 502, 'Batuk pilek', 'Istirahat dan konsumsi makanan bergizi'),
 (20003, 10003, 9003, 503, 'Luka sayatan di tangan', 'Ganti perban secara berkala'),
@@ -112,7 +121,7 @@ insert into medical_record values
 (20010, 10010, 9010, 510, 'Gusi bengkak', 'Kontrol ke dokter gigi');
 
 -- MEDICAL_RECORD_MEDICINE
-insert into medical_record_medicine values
+insert into medical_record_medicine (medical_record_code, medicine_code, dosage) values
 (20001, 1, '500 mg 3x1/hari'),       
 (20002, 7, '10 mg 2x1/hari'),        
 (20003, 3, '400 mg 3x1/hari'),       
@@ -125,7 +134,7 @@ insert into medical_record_medicine values
 (20010, 2, '500 mg 2x1/hari');
 
 -- INPATIENT_CARE (pasien yang rawat inap: 20003, 20004)
-insert into inpatient_care values
+insert into inpatient_care (inpatientcare_code, patient_id, room_code, assignment_date, end_date) values
 (301, 10003, 'R103', '2025-12-02', '2025-12-04'),  
 (302, 10004, 'R104', '2025-12-02', '2025-12-06');  
 
@@ -135,11 +144,11 @@ insert into nurse (staff_id, specialization) values
 (7002, 'Perawat Umum'),       
 (7007, 'Perawat Umum'),       
 (7008, 'Perawat Umum'),       
-(7006, 'Perawat Umum');       
+(7006, 'Perawat Umum');     
 
 -- NURSE ASSIGNMENT
-insert into nurse_assignment values
+insert into nurse_assignment (assignment_id, staff_id, inpatientcare_code, shift) values
 (1, 7001, 301, 'Pagi'),
 (2, 7002, 301, 'Siang'),
 (3, 7007, 302, 'Pagi'),
-(4, 7008, 302, 'Malam');  
+(4, 7008, 302, 'Malam');
