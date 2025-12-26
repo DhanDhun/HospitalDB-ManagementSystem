@@ -89,16 +89,16 @@ insert into appointment values
 
 -- MEDICAL RECORD
 insert into medical_record values
-(20001, 10001, 9001, 501, 201, 'Demam tinggi', 'Rawat jalan: Istirahat, banyak minum air, makan buah'),
-(20002, 10002, 9002, 502, 202, 'Batuk pilek', 'Rawat jalan: Istirahat dan konsumsi makanan bergizi'),
-(20003, 10003, 9003, 503, 203, 'Luka sayatan di tangan', 'Rawat inap: Pembersihan luka, observasi, dressing rutin'),
-(20004, 10004, 9004, 504, 204, 'Gejala tipes', 'Rawat inap: Pantau suhu, pemberian antibiotik, cairan infus, istirahat total'),
-(20005, 10005, 9005, 505, 205, 'Sakit gigi berlubang', 'Rawat jalan: Kontrol ke dokter gigi, menjaga kebersihan gigi, obat pereda nyeri'),
-(20006, 10006, 9006, 506, 206, 'Telinga berdenging', 'Rawat jalan: Hindari masuk air, jaga kebersihan telinga, obat tetes sesuai resep'),
-(20007, 10007, 9007, 507, 207, 'Gatal-gatal di kulit', 'Rawat jalan: Hindari alergen, gunakan salep sesuai resep'),
-(20008, 10008, 9008, 508, 208, 'Mata merah dan perih', 'Rawat jalan: Kompres hangat, hindari digosok, obat tetes mata sesuai resep'),
-(20009, 10009, 9009, 509, 204, 'Nyeri otot ringan', 'Rawat jalan: Olahraga ringan, pemanasan sebelum aktivitas, obat pereda nyeri jika perlu'),
-(20010, 10010, 9010, 510, 205, 'Gusi bengkak', 'Rawat jalan: Kontrol ke dokter gigi, menjaga kebersihan mulut, antibiotik jika disarankan');
+(20001, 10001, 9001, 501, 201, 'Demam tinggi', 'Istirahat dan konsumsi makanan bergizi'),
+(20002, 10002, 9002, 502, 202, 'Batuk pilek', 'Istirahat dan konsumsi makanan bergizi'),
+(20003, 10003, 9003, 503, 203, 'Luka sayatan di tangan', 'Mengganti perban luka secara berkala '),
+(20004, 10004, 9004, 504, 204, 'Gejala tipes', 'Observasi secara berkala dan istirahat total'),
+(20005, 10005, 9005, 505, 205, 'Sakit gigi berlubang', 'Rutin kontrol ke dokter gigi dan menjaga kebersihan gigi'),
+(20006, 10006, 9006, 506, 206, 'Telinga berdenging', 'Hindari masuk air dan jaga kebersihan telinga'),
+(20007, 10007, 9007, 507, 207, 'Gatal-gatal di kulit', 'Hindari alergen dan gunakan salep sesuai resep'),
+(20008, 10008, 9008, 508, 208, 'Mata merah dan perih', 'Kompres hangat dan berikan obat tetes mata sesuai resep'),
+(20009, 10009, 9009, 509, 204, 'Nyeri otot ringan', 'Olahraga ringan dan pemanasan sebelum aktivitas'),
+(20010, 10010, 9010, 510, 205, 'Gusi bengkak', 'Kontrol ke dokter gigi dan menjaga kebersihan mulut');
 
 -- MEDICAL_RECORD_MEDICINE
 insert into medical_record_medicine values
@@ -132,6 +132,7 @@ insert into nurse (staff_id, specialization) values
 (7007, 'Perawat Umum'),       
 (7008, 'Perawat Umum'),       
 (7006, 'Perawat Umum');       
+
 
 
 
