@@ -24,16 +24,16 @@ insert into department values
 
 -- MEDICINE
 insert into medicine  values
-(001, 'Paracetamol', 5000.00, 100),
-(002, 'Amoxicillin', 10000.00, 50),
-(003, 'Ibuprofen', 7000.00, 80),
-(004, 'Vitamin C', 3000.00, 150),
-(005, 'Ambroxol', 6000.00, 40),
-(006, 'Salep Kulit', 12000.00, 60),
-(007, 'Cetirizine', 9000.00, 30),
-(008, 'Antasida', 4000.00, 120),
-(009, 'Obat Tetes Mata', 20000.00, 70),
-(010, 'Amoxicillin Syrup', 28000.00, 50);
+(1, 'Paracetamol', 5000.00, 100),
+(2, 'Amoxicillin', 10000.00, 50),
+(3, 'Ibuprofen', 7000.00, 80),
+(4, 'Vitamin C', 3000.00, 150),
+(5, 'Ambroxol', 6000.00, 40),
+(6, 'Salep Kulit', 12000.00, 60),
+(7, 'Cetirizine', 9000.00, 30),
+(8, 'Antasida', 4000.00, 120),
+(9, 'Obat Tetes Mata', 20000.00, 70),
+(10, 'Amoxicillin Syrup', 28000.00, 50);
 
 -- STAFF
 insert into staff values
@@ -63,67 +63,71 @@ insert into room values
 
 -- DOCTOR
 insert into doctor values
-(9001, 'Aldo', 'Pranata', 'Senin-Rabu 08:00-16:00', '081334334443', 201),
-(9002, 'Nadia', 'Arumi', 'Selasa-Kamis 08:00-16:00', '081447747444', 202),
-(9003, 'Rafael', 'Santoso', 'Senin-Jumat 09:00-17:00', '08166647666', 203),
-(9004, 'Kirana', 'Tashmia', 'Rabu-Jumat 08:00-16:00', '081934459999', 204),
-(9005, 'Elara', 'Salsabila', 'Senin-Jumat 08:00-15:00', '081122233344', 205),
-(9006, 'Gian', 'Hutama', 'Selasa-Kamis 09:00-17:00', '081133344455', 206),
-(9007, 'Mira', 'Kalista', 'Senin-Rabu 10:00-18:00', '081144455566', 207),
-(9008, 'Azka', 'Wijaya', 'Senin-Jumat 08:00-16:00', '081155566677', 208),
-(9009, 'Dara', 'Putri', 'Rabu-Jumat 08:00-16:00', '081166677788', 204),
-(9010, 'Faris', 'Darmaja', 'Selasa-Kamis 08:00-16:00', '081177788899', 205);
+(9001, 'Aldo', 'Pranata', '081334334443', 201),
+(9002, 'Nadia', 'Arumi', '081447747444', 202),
+(9003, 'Rafael', 'Santoso', '08166647666', 203),
+(9004, 'Kirana', 'Tashmia', '081934459999', 204),
+(9005, 'Elara', 'Salsabila', '081122233344', 205),
+(9006, 'Gian', 'Hutama', '081133344455', 206),
+(9007, 'Mira', 'Kalista', '081144455566', 207),
+(9008, 'Azka', 'Wijaya',  '081155566677', 208),
+(9009, 'Dara', 'Putri', '081166677788', 204),
+(9010, 'Faris', 'Darmaja', '081177788899', 205);
+
+-- DOCTOR SCHEDULE
+insert into doc_schedule (doctor_id, day_of_week, start_time, end_time) VALUES
+(9001, 1, '08:00', '16:00'),
+(9001, 3, '08:00', '16:00'),
+(9002, 2, '08:00', '16:00'),
+(9002, 4, '08:00', '16:00'),
+(9003, 1, '09:00', '17:00'),
+(9003, 5, '09:00', '17:00'),
+(9004, 3, '08:00', '16:00'),
+(9004, 5, '08:00', '16:00');
 
 -- APPOINTMENT
 insert into appointment values
-(501, 10001, 9001, 201, '08:30', '2025-12-01'),
-(502, 10002, 9002, 202, '09:00', '2025-12-01'),
-(503, 10003, 9003, 203, '10:00', '2025-12-02'),
-(504, 10004, 9004, 204, '11:00', '2025-12-02'),
-(505, 10005, 9005, 205, '13:00', '2025-12-03'),
-(506, 10006, 9006, 206, '14:00', '2025-12-03'),
-(507, 10007, 9007, 207, '10:00', '2025-12-04'),
-(508, 10008, 9008, 208, '09:30', '2025-12-04'),
-(509, 10009, 9009, 204, '13:30', '2025-12-05'),
-(510, 10010, 9010, 205, '15:30', '2025-12-05');
+(501, 10001, 201, 9001, '2025-12-01', '08:30'),
+(502, 10002, 202, 9002, '2025-12-01', '09:00'),
+(503, 10003, 203, 9003, '2025-12-02', '10:00'),
+(504, 10004, 204, 9004, '2025-12-02', '11:00'),
+(505, 10005, 205, 9005, '2025-12-03', '13:00'),
+(506, 10006, 206, 9006, '2025-12-03', '14:00'),
+(507, 10007, 207, 9007, '2025-12-04', '10:00'),
+(508, 10008, 208, 9008, '2025-12-04', '09:30'),
+(509, 10009, 204, 9009, '2025-12-05', '13:30'),
+(510, 10010, 205, 9010, '2025-12-05', '15:30');
 
 -- MEDICAL RECORD
 insert into medical_record values
-(20001, 10001, 9001, 501, 201, 'Demam tinggi', 'Istirahat dan konsumsi makanan bergizi'),
-(20002, 10002, 9002, 502, 202, 'Batuk pilek', 'Istirahat dan konsumsi makanan bergizi'),
-(20003, 10003, 9003, 503, 203, 'Luka sayatan di tangan', 'Mengganti perban luka secara berkala '),
-(20004, 10004, 9004, 504, 204, 'Gejala tipes', 'Observasi secara berkala dan istirahat total'),
-(20005, 10005, 9005, 505, 205, 'Sakit gigi berlubang', 'Rutin kontrol ke dokter gigi dan menjaga kebersihan gigi'),
-(20006, 10006, 9006, 506, 206, 'Telinga berdenging', 'Hindari masuk air dan jaga kebersihan telinga'),
-(20007, 10007, 9007, 507, 207, 'Gatal-gatal di kulit', 'Hindari alergen dan gunakan salep sesuai resep'),
-(20008, 10008, 9008, 508, 208, 'Mata merah dan perih', 'Kompres hangat dan berikan obat tetes mata sesuai resep'),
-(20009, 10009, 9009, 509, 204, 'Nyeri otot ringan', 'Olahraga ringan dan pemanasan sebelum aktivitas'),
-(20010, 10010, 9010, 510, 205, 'Gusi bengkak', 'Kontrol ke dokter gigi dan menjaga kebersihan mulut');
+(20001, 10001, 9001, 501, 'Demam tinggi', 'Istirahat dan konsumsi makanan bergizi'),
+(20002, 10002, 9002, 502, 'Batuk pilek', 'Istirahat dan konsumsi makanan bergizi'),
+(20003, 10003, 9003, 503, 'Luka sayatan di tangan', 'Ganti perban secara berkala'),
+(20004, 10004, 9004, 504, 'Gejala tipes', 'Observasi dan istirahat total'),
+(20005, 10005, 9005, 505, 'Sakit gigi berlubang', 'Jaga kebersihan gigi'),
+(20006, 10006, 9006, 506, 'Telinga berdenging', 'Hindari air masuk telinga'),
+(20007, 10007, 9007, 507, 'Gatal kulit', 'Gunakan salep sesuai resep'),
+(20008, 10008, 9008, 508, 'Mata merah', 'Obat tetes mata'),
+(20009, 10009, 9009, 509, 'Nyeri otot ringan', 'Olahraga ringan'),
+(20010, 10010, 9010, 510, 'Gusi bengkak', 'Kontrol ke dokter gigi');
 
 -- MEDICAL_RECORD_MEDICINE
 insert into medical_record_medicine values
-(20001, 001, '500 mg 3x1/hari'),       
-(20002, 007, '10 mg 2x1/hari'),        
-(20003, 003, '400 mg 3x1/hari'),       
-(20004, 002, '500 mg 2x1/hari'),       
-(20005, 001, '500 mg 2x1/hari'),       
-(20006, 004, '500 mg, 1x sehari'),                   
-(20007, 007, '10 mg 1x1/hari'),        
-(20008, 009, '2 tetes 2x/hari'),       
-(20009, 003, '400 mg 2x1/hari'),       
-(20010, 002, '500 mg 2x1/hari');
+(20001, 1, '500 mg 3x1/hari'),       
+(20002, 7, '10 mg 2x1/hari'),        
+(20003, 3, '400 mg 3x1/hari'),       
+(20004, 2, '500 mg 2x1/hari'),       
+(20005, 1, '500 mg 2x1/hari'),       
+(20006, 4, '500 mg, 1x sehari'),                   
+(20007, 7, '10 mg 1x1/hari'),        
+(20008, 9, '2 tetes 2x/hari'),       
+(20009, 3, '400 mg 2x1/hari'),       
+(20010, 2, '500 mg 2x1/hari');
 
 -- INPATIENT_CARE (pasien yang rawat inap: 20003, 20004)
 insert into inpatient_care values
 (301, 10003, 'R103', '2025-12-02', '2025-12-04'),  
 (302, 10004, 'R104', '2025-12-02', '2025-12-06');  
-
--- NURSE ASSIGNMENT
-insert into nurse_assigment values
-(1, 7001, 301, 'Pagi'),
-(2, 7002, 301, 'Siang'),
-(3, 7007, 302, 'Pagi'),
-(4, 7008, 302, 'Malam');
 
 -- NURSE
 insert into nurse (staff_id, specialization) values
@@ -133,6 +137,9 @@ insert into nurse (staff_id, specialization) values
 (7008, 'Perawat Umum'),       
 (7006, 'Perawat Umum');       
 
-
-
-
+-- NURSE ASSIGNMENT
+insert into nurse_assignment values
+(1, 7001, 301, 'Pagi'),
+(2, 7002, 301, 'Siang'),
+(3, 7007, 302, 'Pagi'),
+(4, 7008, 302, 'Malam');  
