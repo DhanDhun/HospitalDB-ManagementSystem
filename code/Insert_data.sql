@@ -24,16 +24,17 @@ insert into department (dept_id, dept_name, building) values
 
 -- MEDICINE
 insert into medicine (medicine_code, name, price, stock) values
-(001, 'Paracetamol', 5000.00, 100),
-(002, 'Amoxicillin', 10000.00, 50),
-(003, 'Ibuprofen', 7000.00, 80),
-(004, 'Vitamin C', 3000.00, 150),
-(005, 'Ambroxol', 6000.00, 40),
-(006, 'Salep Kulit', 12000.00, 60),
-(007, 'Cetirizine', 9000.00, 30),
-(008, 'Antasida', 4000.00, 120),
-(009, 'Obat Tetes Mata', 20000.00, 70),
-(010, 'Amoxicillin Syrup', 28000.00, 50);
+(1, 'Paracetamol', 5000.00, 100),
+(2, 'Amoxicillin', 10000.00, 50),
+(3, 'Ibuprofen', 7000.00, 80),
+(4, 'Vitamin C', 3000.00, 150),
+(5, 'Ambroxol', 6000.00, 40),
+(6, 'Salep Kulit', 12000.00, 60),
+(7, 'Cetirizine', 9000.00, 30),
+(8, 'Antasida', 4000.00, 120),
+(9, 'Obat Tetes Mata', 20000.00, 70),
+(10, 'Amoxicillin Syrup', 28000.00, 50);
+
 
 -- STAFF
 insert into staff (staff_id, first_name, last_name, role, contact_person) values
@@ -62,6 +63,7 @@ insert into room (room_code, room_number, capacity) values
 ('R204', 'Ruang 204', 2);
 
 -- DOCTOR
+
 insert into doctor (doctor_id, first_name, last_name, contact_person, dept_id) values
 (9001, 'Aldo', 'Pranata', '081334334443', 201),
 (9002, 'Nadia', 'Arumi', '081447747444', 202),
@@ -75,22 +77,22 @@ insert into doctor (doctor_id, first_name, last_name, contact_person, dept_id) v
 (9010, 'Faris', 'Darmaja', '081177788899', 205);
 
 -- DOCTOR SCHEDULE
-insert into doc_schedule (schedule_id, doctor_id, day_of_week, start_time, end_time) values
-(1, 9001, 1, '08:00', '16:00'),
-(2, 9001, 3, '08:00', '16:00'),
-(3, 9002, 2, '08:00', '16:00'),
-(4, 9002, 4, '08:00', '16:00'),
-(5, 9003, 2, '09:00', '17:00'),
-(6, 9003, 5, '09:00', '17:00'),
-(7, 9004, 1, '08:00', '16:00'),
-(8, 9004, 3, '08:00', '14:00'),
-(9, 9005, 4, '13:00', '20:00'),
-(10, 9006, 5, '09:00', '15:00'),
-(11, 9007, 5, '10:00', '18:00'),
-(12, 9008, 6, '08:00', '12:00'),
-(13, 9009, 2, '07:00', '14:00'),
-(14, 9009, 4, '07:00', '14:00'),
-(15, 9010, 6, '14:00', '21:00');
+insert into doc_schedule (doctor_id, day_of_week, start_time, end_time) values
+(9001, 1, '08:00', '16:00'),
+(9001, 3, '08:00', '16:00'),
+(9002, 2, '08:00', '16:00'),
+(9002, 4, '08:00', '16:00'),
+(9003, 2, '09:00', '17:00'),
+(9003, 5, '09:00', '17:00'),
+(9004, 1, '08:00', '16:00'),
+(9004, 3, '08:00', '14:00'),
+(9005, 4, '13:00', '20:00'),
+(9006, 5, '09:00', '15:00'),
+(9007, 5, '10:00', '18:00'),
+(9008, 6, '08:00', '12:00'),
+(9009, 2, '07:00', '14:00'),
+(9009, 4, '07:00', '14:00'),
+(9010, 6, '14:00', '21:00');
 
 -- APPOINTMENT
 insert into appointment (appointment_code, patient_id, dept_id, doctor_id, appointment_date, appointment_time) values
@@ -107,29 +109,29 @@ insert into appointment (appointment_code, patient_id, dept_id, doctor_id, appoi
 
 -- MEDICAL RECORD
 insert into medical_record (medical_record_code, patient_id, doctor_id, appointment_code, diagnosis, treatment) values
-(20001, 10001, 9001, 501, 201, 'Demam tinggi', 'Pemasangan infus cairan dan kompres hangat'),
-(20002, 10002, 9002, 502, 202, 'Batuk pilek', 'Terapi uap (Nebulizer) untuk pengencer dahak'),
-(20003, 10003, 9003, 503, 203, 'Luka sayatan di tangan', 'Pembersihan luka dan jahit luka serta persiapan rawat inap untuk observasi'),
-(20004, 10004, 9004, 504, 204, 'Gejala tipes', 'Pemasangan infus cairan dan persiapan rawat inap (Bed Rest)'),
-(20005, 10005, 9005, 505, 205, 'Sakit gigi berlubang', 'Pembersihan karies gigi dan tambal gigi'),
-(20006, 10006, 9006, 506, 206, 'Telinga berdenging', 'Pembersihan telinga dan tes pendengaran'),
-(20007, 10007, 9007, 507, 207, 'Gatal-gatal di kulit', 'Pemberian suntikan anti-alergi dan penggunaan salep di area yang gatal'),
-(20008, 10008, 9008, 508, 208, 'Mata merah dan perih', 'Pencucian mata dengan cairan steril dan kompres'),
-(20009, 10009, 9009, 509, 204, 'Nyeri otot ringan', 'Pemasangan perban elastis pada area nyeri'),
-(20010, 10010, 9010, 510, 205, 'Gusi bengkak', 'Scaling dan polishing (pembersihan karang gigi)');
+(20001, 10001, 9001, 501, 'Demam tinggi', 'Istirahat dan konsumsi makanan bergizi'),
+(20002, 10002, 9002, 502, 'Batuk pilek', 'Istirahat dan konsumsi makanan bergizi'),
+(20003, 10003, 9003, 503, 'Luka sayatan di tangan', 'Ganti perban secara berkala'),
+(20004, 10004, 9004, 504, 'Gejala tipes', 'Observasi dan istirahat total'),
+(20005, 10005, 9005, 505, 'Sakit gigi berlubang', 'Jaga kebersihan gigi'),
+(20006, 10006, 9006, 506, 'Telinga berdenging', 'Hindari air masuk telinga'),
+(20007, 10007, 9007, 507, 'Gatal kulit', 'Gunakan salep sesuai resep'),
+(20008, 10008, 9008, 508, 'Mata merah', 'Obat tetes mata'),
+(20009, 10009, 9009, 509, 'Nyeri otot ringan', 'Olahraga ringan'),
+(20010, 10010, 9010, 510, 'Gusi bengkak', 'Kontrol ke dokter gigi');
 
 -- MEDICAL_RECORD_MEDICINE
 insert into medical_record_medicine (medical_record_code, medicine_code, dosage) values
-(20001, 001, '500 mg 3x1/hari'),       
-(20002, 007, '10 mg 2x1/hari'),        
-(20003, 003, '400 mg 3x1/hari'),       
-(20004, 002, '500 mg 2x1/hari'),       
-(20005, 001, '500 mg 2x1/hari'),       
-(20006, 004, '500 mg, 1x sehari'),                   
-(20007, 007, '10 mg 1x1/hari'),        
-(20008, 009, '2 tetes 2x/hari'),       
-(20009, 003, '400 mg 2x1/hari'),       
-(20010, 002, '500 mg 2x1/hari');
+(20001, 1, '500 mg 3x1/hari'),       
+(20002, 7, '10 mg 2x1/hari'),        
+(20003, 3, '400 mg 3x1/hari'),       
+(20004, 2, '500 mg 2x1/hari'),       
+(20005, 1, '500 mg 2x1/hari'),       
+(20006, 4, '500 mg, 1x sehari'),                   
+(20007, 7, '10 mg 1x1/hari'),        
+(20008, 9, '2 tetes 2x/hari'),       
+(20009, 3, '400 mg 2x1/hari'),       
+(20010, 2, '500 mg 2x1/hari');
 
 -- INPATIENT_CARE (pasien yang rawat inap: 20003, 20004)
 insert into inpatient_care (inpatientcare_code, patient_id, room_code, assignment_date, end_date) values
@@ -145,16 +147,8 @@ insert into nurse (staff_id, specialization) values
 (7006, 'Perawat Umum');     
 
 -- NURSE ASSIGNMENT
-insert into nurse_assigment (assignment_id, staff_id, inpatientcare_code, shift) values
+insert into nurse_assignment (assignment_id, staff_id, inpatientcare_code, shift) values
 (1, 7001, 301, 'Pagi'),
 (2, 7002, 301, 'Siang'),
 (3, 7007, 302, 'Pagi'),
 (4, 7008, 302, 'Malam');
-
-  
-
-
-
-
-
-
