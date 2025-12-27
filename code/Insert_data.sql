@@ -109,16 +109,16 @@ insert into appointment (appointment_code, patient_id, dept_id, doctor_id, appoi
 
 -- MEDICAL RECORD
 insert into medical_record (medical_record_code, patient_id, doctor_id, appointment_code, diagnosis, treatment) values
-(20001, 10001, 9001, 501, 'Demam tinggi', 'Istirahat dan konsumsi makanan bergizi'),
-(20002, 10002, 9002, 502, 'Batuk pilek', 'Istirahat dan konsumsi makanan bergizi'),
-(20003, 10003, 9003, 503, 'Luka sayatan di tangan', 'Ganti perban secara berkala'),
-(20004, 10004, 9004, 504, 'Gejala tipes', 'Observasi dan istirahat total'),
-(20005, 10005, 9005, 505, 'Sakit gigi berlubang', 'Jaga kebersihan gigi'),
-(20006, 10006, 9006, 506, 'Telinga berdenging', 'Hindari air masuk telinga'),
-(20007, 10007, 9007, 507, 'Gatal kulit', 'Gunakan salep sesuai resep'),
-(20008, 10008, 9008, 508, 'Mata merah', 'Obat tetes mata'),
-(20009, 10009, 9009, 509, 'Nyeri otot ringan', 'Olahraga ringan'),
-(20010, 10010, 9010, 510, 'Gusi bengkak', 'Kontrol ke dokter gigi');
+(20001, 10001, 9001, 501, 'Demam tinggi', 'Istirahat dan konsumsi makanan bergizi serta kompres hangat'),
+(20002, 10002, 9002, 502, 'Batuk pilek', 'Tindakan uap (Nebulizer) untuk pengencer dahak'),
+(20003, 10003, 9003, 503, 'Luka sayatan di tangan', 'Pembersihan luka dan jahit luka'),
+(20004, 10004, 9004, 504, 'Gejala tipes', 'Pasang infus dan persiapan rawat inap (Bed Rest)'),
+(20005, 10005, 9005, 505, 'Sakit gigi berlubang', 'Bor karies gigi dan tambal gigi'),
+(20006, 10006, 9006, 506, 'Telinga berdenging', 'Pembersihan telinga (Ear Toilet) dan tes pendengaran'),
+(20007, 10007, 9007, 507, 'Gatal kulit', 'Pemberian suntikan anti-alergi dan pengolesan salep di area yang gatal'),
+(20008, 10008, 9008, 508, 'Mata merah', 'Irigasi mata (pencucian mata) dengan cairan steril dan pemberian obat tetes mata jika mata masih merah'),
+(20009, 10009, 9009, 509, 'Nyeri otot ringan', 'Pemasangan perban elastis di area yang nyeri'),
+(20010, 10010, 9010, 510, 'Gusi bengkak', 'Scaling (pembersihan karang gigi) dan irigasi gusi');
 
 -- MEDICAL_RECORD_MEDICINE
 insert into medical_record_medicine (medical_record_code, medicine_code, dosage) values
@@ -152,4 +152,5 @@ insert into nurse_assignment (assignment_id, staff_id, inpatientcare_code, shift
 (2, 7002, 301, 'Siang'),
 (3, 7007, 302, 'Pagi'),
 (4, 7008, 302, 'Malam');
+
 
