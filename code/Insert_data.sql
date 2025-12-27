@@ -152,3 +152,4 @@ insert into nurse_assignment (assignment_id, staff_id, inpatientcare_code, shift
 (2, 7002, 301, 'Siang'),
 (3, 7007, 302, 'Pagi'),
 (4, 7008, 302, 'Malam');
+
